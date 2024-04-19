@@ -114,5 +114,44 @@ provider "azurerm" {
     name                  = "${var.vm_name_prefix}-${format("%02d", count.index)}"
     location              = var.location
     resource_group_name   = var.resource_group_name
-    network_interface_ids = [element(azurerm_network_interface.main.*.id, count
+    network_interface_ids = [element(azurerm_network_interface.main.*.id, count.index)]
+    availability_set_id   = azurerm_availability_set.main.id
+    vm_size               = var.vm_size
+  
+    storage_image_reference {
+      id = var.vm_image_id
+    }
+  
+    storage_os_disk {
+      name              = "osdisk-${format("%02d", count.index)}"
+      caching           = "ReadWrite"
+      create_option     = "FromImage"
+      managed_disk_type = "Premium_LRS"
+    }
+  
+    os_profile {
+      computer_name  = "hostname-${format("%02d", count.index)}"
+      admin_username = "adminuser"
+      admin_password = "Password1234!"
+    }
+  
+    os_profile_linux_config {
+      disable_password_authentication = false
+    }
+  
+    tags = {
+      environment = "development"
+    }
+  }
+  
+  resource "azurerm_managed_disk" "main" {
+    count                = var.vm_count
+    name                 = "datadisk-${format("%02d", count.index)}"
+    location             = var.location
+    resource_group_name  = var.resource_group_name
+    storage_account_type = "Premium_LRS"
+    create_option        = "Empty"
+    disk_size_gb         = "1024"
+  }
+  
   

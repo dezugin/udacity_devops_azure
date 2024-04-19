@@ -13,6 +13,7 @@ variable "location" {
 
 variable "username" {
   description = "The admin username for the VM being created."
+
 }
 
 variable "password" {

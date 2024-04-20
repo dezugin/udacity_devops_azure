@@ -1,1 +1,5 @@
 variables.tf
+solution.plan
+.terraform.lock.hcl
+.terraform/
+.terraform

@@ -87,19 +87,17 @@ provider "azurerm" {
       public_ip_address_id          = azurerm_public_ip.main.id
     }
   }
-  
-  resource "azurerm_lb_nat_rule" "main" {
+    resource "azurerm_lb_nat_rule" "main" {
     count                            = var.vm_count
     resource_group_name              = var.resource_group_name
     loadbalancer_id                  = azurerm_lb.main.id
     name                             = "LBRule${count.index}"
     protocol                         = "Tcp"
-    frontend_port                    = 50000 + count.index
+    frontend_port                    = 50000 + count.index  // Ensure this does not exceed the range of allowed ports
     backend_port                     = 22
     frontend_ip_configuration_name   = "PublicIPAddress"
     enable_floating_ip               = false
     idle_timeout_in_minutes          = 4
-    backend_address_pool_id          = azurerm_lb_backend_address_pool.main.id
   }
   
   resource "azurerm_availability_set" "main" {
@@ -131,8 +129,8 @@ provider "azurerm" {
   
     os_profile {
       computer_name  = "hostname-${format("%02d", count.index)}"
-      admin_username = "adminuser"
-      admin_password = "Password1234!"
+      admin_username                  = var.username
+      admin_password                  = var.password
     }
   
     os_profile_linux_config {

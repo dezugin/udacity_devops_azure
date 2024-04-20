@@ -9,7 +9,7 @@ This is an azure course on devops with plenty of hands on projects, and the code
 3. In order to get the values above, you will need to create a resource group and credentials, as per this [link](https://learn.microsoft.com/pt-br/azure/virtual-machines/linux/build-image-with-packer)
 4. Login in your Azure account
 5. From the Azure Console, open the Bash terminal and upload your .json file.
-[upload](bash-upload.jpeg)
+![upload](bash-upload.jpeg)
 6. enter the command to actually create an image:
 7. `packer build yourimage.json`
 8. `az image list`
@@ -25,3 +25,5 @@ This is an azure course on devops with plenty of hands on projects, and the code
 7. run `terraform apply` to apply your plan and deploy your infrastructure
 8. run `terraform show` to see your infrastructure!
 9. run `terraform destroy` to destroy your infrastructure and save on resources!
+
+You should have as many vms as you wish, with the characteristics specified in the udacity course!

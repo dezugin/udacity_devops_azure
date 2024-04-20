@@ -19,7 +19,7 @@ This is an azure course on devops with plenty of hands on projects, and the code
 1. Login on your azure account with `az login`
 2. go to the terraform folder, then either terraform1 or project1
 3. on `variables.tf`, change the default on `"vm_image_id"` to your packer image id
-4. example: "/subscriptions/SUBSCRIPTIONID/resourceGroups/MYRESOURCEGROUP/providers/Microsoft.Compute/images/myPackerImage"
+4. example: `"/subscriptions/SUBSCRIPTIONID/resourceGroups/MYRESOURCEGROUP/providers/Microsoft.Compute/images/myPackerImage"`
 5. run `terraform init` to get it started
 6. run `terraform plan` to view the resources it will be created
 7. run `terraform apply` to apply your plan and deploy your infrastructure

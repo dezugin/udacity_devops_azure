@@ -66,7 +66,7 @@ variable "vm_count" {
 variable "vm_size" {
   description = "The size of the virtual machine."
   type        = string
-  default     = "30"
+  default     = "3Standard_D2as_v4"
 }
 
 variable "vm_image_id" {
@@ -93,4 +93,14 @@ variable "username" {
 variable "password" {
   description = "The password for the VM being created."
   default = "Password1234!"
+}
+
+variable "disk_name_prefix"{
+  description = " Variable for the prefix of the disk name"
+  default = "project_disk"
+}
+
+variable "os_disk_name_prefix"{
+  description = " Variable for the prefix of the disk name"
+  default = "project_vm"
 }

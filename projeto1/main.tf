@@ -84,7 +84,7 @@ provider "azurerm" {
       name                          = "testconfiguration1"
       subnet_id                     = azurerm_subnet.main.id
       private_ip_address_allocation = "Dynamic"
-      public_ip_address_id          = azurerm_public_ip.main.id
+      //public_ip_address_id          = azurerm_public_ip.main.id
     }
   }
     resource "azurerm_lb_nat_rule" "main" {
@@ -121,7 +121,7 @@ provider "azurerm" {
     }
   
     storage_os_disk {
-      name              = "osdisk-${format("%02d", count.index)}"
+      name              = "${var.os_disk_name_prefix}-${format("%02d", count.index)}"
       caching           = "ReadWrite"
       create_option     = "FromImage"
       managed_disk_type = "Premium_LRS"
@@ -144,7 +144,7 @@ provider "azurerm" {
   
   resource "azurerm_managed_disk" "main" {
     count                = var.vm_count
-    name                 = "datadisk-${format("%02d", count.index)}"
+    name                 = "${var.disk_name_prefix}-${format("%02d", count.index)}"
     location             = var.location
     resource_group_name  = var.resource_group_name
     storage_account_type = "Premium_LRS"

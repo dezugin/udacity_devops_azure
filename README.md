@@ -7,7 +7,3 @@ This is an azure course on devops with plenty of hands on projects, and the code
 
 ## Lesson 2 - Agile Development with Azure
 ![lesson2](lesson_2.png)
-
-### Continuous Integration, continuous delivery
-
-![cicd](cicd.png)

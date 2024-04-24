@@ -7,3 +7,6 @@ This is an azure course on devops with plenty of hands on projects, and the code
 
 ## Lesson 2 - Agile Development with Azure
 ![lesson2](lesson_2.png)
+
+## Lesson 3 - Ensuring Quality
+![lesson3](course3.png)

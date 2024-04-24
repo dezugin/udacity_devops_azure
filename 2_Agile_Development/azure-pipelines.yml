@@ -1,0 +1,19 @@
+# Python package
+# Create and test a Python package on multiple Python versions.
+# Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/python
+
+trigger:
+- master
+
+pool: myAgentPool
+
+steps:
+- script: |
+    python3 -m pip install --upgrade pip
+    pip install -r requirements.txt
+  displayName: 'Install dependencies'
+- script: |
+    /home/devopsagent/.local/bin/pylint --disable=R,C,W1203,W0702 app.py
+  displayName: 'lint'
+  

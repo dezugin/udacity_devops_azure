@@ -1,3 +1,5 @@
+![img](https://dev.azure.com/odluser258277/udacity/_apis/build/status%2Fdezugin.flascodehugo?branchName=master)
+
 # Overview
 
 In this project, I built a Github repository from scratch and created a scaffolding that assisted me in performing both Continuous Integration and Continuous Delivery. I used Github Actions along with a Makefile, requirements.txt and application code to perform an initial lint, test, and install cycle. Next, I integrated this project with Azure Pipelines to enable Continuous Delivery to Azure App Service.
@@ -25,7 +27,11 @@ Instructions for running the Python project.  How could a user with no context r
 
 
 * Project running on Azure App Service
+
+![cont](continuous.png)
+
 ![appservices](appservices.png)
+
 * Project cloned into Azure Cloud Shell
 ![cloned](cloned.png)
 * Passing tests that are displayed after running the `make all` command from the `Makefile` with a test run
@@ -46,6 +52,19 @@ Instructions for running the Python project.  How could a user with no context r
 ## Enhancements
 
 More emphasis should be given to debugging applications through log files, after I started doing it I took minutes on what took hours before.
+## Locust testing
+- Execute a Load Testing, running Locust with `./locust.sh`.
+![img2](locust1.png)
+
+![img3](locust2.png)
+
+![img4](locust3.png)
+
+![img5](locust4.png)
+
+![img6](locust5.png)
+
+![img7](locust6.png)
 
 ## Demo 
 

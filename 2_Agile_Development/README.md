@@ -1,6 +1,12 @@
-![img](https://dev.azure.com/odluser258277/udacity/_apis/build/status%2Fdezugin.flascodehugo?branchName=master)
 
 # Overview
+
+
+## Actions Badge
+
+badge->
+
+![img](https://dev.azure.com/odluser258277/udacity/_apis/build/status%2Fdezugin.flascodehugo?branchName=master)
 
 In this project, I built a Github repository from scratch and created a scaffolding that assisted me in performing both Continuous Integration and Continuous Delivery. I used Github Actions along with a Makefile, requirements.txt and application code to perform an initial lint, test, and install cycle. Next, I integrated this project with Azure Pipelines to enable Continuous Delivery to Azure App Service.
 
@@ -48,7 +54,10 @@ Run `./commands.sh` and change the app name for your own
 
 * Successful deploy of the project in Azure Pipelines and running it.
 
+Screenshot of azure pipelines:
+
 ![pipeline](img/pipeline.png)
+
 
 * Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
 
@@ -74,6 +83,19 @@ More emphasis should be given to debugging applications through log files, after
 ![img6](img/locust5.png)
 
 ![img7](img/locust6.png)
+
+
+## Screenshot of App Services
+
+![img8](img/ssappservices.png)
+
+## Screenshot of Azure Pipelines
+
+![img7](img/sspipeline.png)
+
+![img7](img/sspipeline2.png)
+
+![img7](img/sspipeline3.png)
 
 ## Demo 
 
